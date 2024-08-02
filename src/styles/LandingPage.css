@@ -1,23 +1,79 @@
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
 .main {
     display: flex;
-    flex-grow: 1;
+    margin: 12px;
     justify-content: space-evenly;
     align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 .image-container {
-    width: 500px;
-    height: 400px;
+    width: 400px;
+    height: auto;
     overflow: hidden;
+    margin-top: 12px;
 }
 
-.image-container img {
+#image-1 {
     width: 100%;
-    display: block;
+    object-fit: cover;
 }
 
-.details {
+.image-info {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    max-width: 400px;
+
+}
+
+#ShopButton {
+    color: #f8f8f8;
+    border: 1px solid transparent;
+    background-color: tomato;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    min-width: 250px;
+}
+
+#ShopButton:hover {
+    background-color: rgb(250, 86, 57);
+    border: 1px solid #f8f8f8;
+}
+
+
+
+h1 {
+    font-size: 2.4em;
+    line-height: 1.1;
+    color: aliceblue;
+    margin: 0;
+
+}
+
+h4 {
+    font-size: 1.4em;
+    line-height: 1.1;
+    color: aliceblue;
+    text-align: justify;
+
+}
+
+#discount {
+    font-size: .7em;
+    text-decoration: line-through;
+    color: #f8f8f85c;
+    margin-left: 12px;
 }
