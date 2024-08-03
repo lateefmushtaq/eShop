@@ -1,5 +1,5 @@
 import LandingPage from "../components/LandingPage";
-import { Navbar } from "../components/Navbar";
+import Navbar from "../components/Navbar";
 
 function Home() {
   return (

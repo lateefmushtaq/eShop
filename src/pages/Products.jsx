@@ -1,10 +1,15 @@
+import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
 
 export default function Products() {
   return (
-    <div className="main" style={{ display: "flex" }}>
-      <ProductCard />
-      <div></div>
-    </div>
+    <>
+      {" "}
+      <Navbar />
+      <div className="main" style={{ display: "flex" }}>
+        <ProductCard />
+        <div></div>
+      </div>
+    </>
   );
 }
