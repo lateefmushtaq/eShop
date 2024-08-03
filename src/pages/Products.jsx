@@ -4,6 +4,7 @@ export default function Products() {
   return (
     <div className="main" style={{ display: "flex" }}>
       <ProductCard />
+      <div></div>
     </div>
   );
 }

@@ -1,27 +1,17 @@
-import productsData from "../../src/assets/productsData";
 import "../styles/ProductCard.css";
 import { FaStar } from "react-icons/fa";
 import { BiCartAdd } from "react-icons/bi";
-interface Product {
-  id: number;
-  tag?: string;
-  tagline?: string;
-  heroImage?: string;
-  images: string[];
-  title: string;
-  category: string;
-  type?: string;
-  connectivity?: string;
-  finalPrice: number;
-  originalPrice: number;
-  ratings: number;
-  rateCount?: number;
-  path: string;
-  info?: string;
-}
-
+import { ProductContext } from "../context/ProductsProvider";
+import { useContext } from "react";
 function ProductCard() {
-  return productsData.map((product: Product) => (
+  const { Products, setCartData, cartData } = useContext(ProductContext);
+  function handleClick(id) {
+    const cart = Products.find((e) => e.id === id);
+    setCartData([...cartData, cart]);
+    console.log(cartData);
+  }
+
+  return Products.map((product) => (
     <div className="card" key={product.id}>
       <div className="img-container">
         <img className="card-img" src={product.images[0]} alt={product.title} />
@@ -44,8 +34,7 @@ function ProductCard() {
         </div>
         <hr id="divider" />
         <h4>Price: {product.finalPrice}</h4>
-        <button id="cart-button">
-          {" "}
+        <button id="cart-button" onClick={() => handleClick(product.id)}>
           <BiCartAdd style={{ fontSize: "24px" }} /> Add to cart
         </button>
       </div>
