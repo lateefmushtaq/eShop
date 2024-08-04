@@ -35,6 +35,7 @@ function ProductCard() {
 
   return Products.map((product) => (
     <>
+      {console.log("Image URL:", product.images[0])}
       <div className="card" key={product.id}>
         <div className="img-container">
           <img

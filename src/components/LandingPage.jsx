@@ -1,6 +1,12 @@
 import "../styles/LandingPage.css";
-import mainImage from "../assets/images/products/sonyXb910n-1.png";
+import mainImage from "/images/products/sonyXb910n-1.png";
+import { ProductContext } from "../context/ProductsProvider";
+import { useContext } from "react";
+
 function LandingPage() {
+  const { Products, setCartData, cartData, setNotify, type, message } =
+    useContext(ProductContext);
+
   return (
     <div className="main">
       <div className="image-info">
