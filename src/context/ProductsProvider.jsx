@@ -5,6 +5,9 @@ export const ProductContext = createContext({});
 export const AppProvider = ({ children }) => {
   const Products = productsData;
   const [cartData, setCartData] = useState([]);
+  const [notify, setNotify] = useState(false);
+  const [message, setMessage] = useState("try");
+  const [type, setType] = useState("");
 
   return (
     <ProductContext.Provider
@@ -12,6 +15,12 @@ export const AppProvider = ({ children }) => {
         Products,
         setCartData,
         cartData,
+        setNotify,
+        notify,
+        setMessage,
+        message,
+        type,
+        setType,
       }}
     >
       {children}

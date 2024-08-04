@@ -1,6 +1,7 @@
 import Cart from "../components/Cart";
 import Checkout from "../components/Checkout";
 import Navbar from "../components/Navbar";
+import Toast from "../components/Toast";
 
 function MyCart() {
   const style = {
@@ -9,6 +10,7 @@ function MyCart() {
   };
   return (
     <>
+      <Toast />
       <Navbar />
       <div style={style}>
         <Cart />

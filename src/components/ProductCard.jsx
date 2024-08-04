@@ -5,11 +5,14 @@ import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 
 function ProductCard() {
-  const { Products, setCartData, cartData } = useContext(ProductContext);
+  const { Products, setCartData, cartData, setNotify, setMessage, setType } =
+    useContext(ProductContext);
   function handleClick(id) {
     const cart = Products.find((e) => e.id === id);
     setCartData([...cartData, cart]);
-    console.log(cartData);
+    setNotify(true);
+    setMessage("Added Sucessfully");
+    setType("success");
   }
 
   return Products.map((product) => (
@@ -24,22 +27,22 @@ function ProductCard() {
         </div>
         <div className="card-details">
           <div className="rating">
-            <p>
+            <span>
               {[...Array(product.rateCount || 0)].map((_, index) => (
                 <FaStar key={index} />
               ))}
-            </p>
-            <p> Ratings: {product.ratings}</p>
+            </span>
+            <span> Ratings: {product.ratings}</span>
           </div>
-          <h4>{product.title}</h4>{" "}
-          <p>{product.tagline ? product.tagline : product.info}</p>
+          <h4 style={{ margin: "16px 0px" }}>{product.title}</h4>
+          <h5>{product.tagline ? product.tagline : product.info}</h5>
           <div className="category">
-            <p id="category-info">{product.category}</p>
-            <p id="category-info">{product.type}</p>
-            <p id="category-info">{product.connectivity}</p>
+            <span id="category-info">{product.category}</span>
+            <span id="category-info">{product.type}</span>
+            <span id="category-info">{product.connectivity}</span>
           </div>
           <hr id="divider" />
-          <h4>Price: {product.finalPrice}</h4>
+          <h4 style={{ margin: "16px 0px" }}>Price: {product.finalPrice}</h4>
           <button id="cart-button" onClick={() => handleClick(product.id)}>
             <BiCartAdd style={{ fontSize: "24px" }} /> Add to cart
           </button>

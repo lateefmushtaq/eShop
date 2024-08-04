@@ -6,10 +6,14 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-  const { setCartData, cartData } = useContext(ProductContext);
+  const { setCartData, cartData, setNotify, setMessage, setType } =
+    useContext(ProductContext);
   function handleDelete(id) {
     const updatedProducts = cartData.filter((e) => e.id !== id);
     setCartData(updatedProducts);
+    setNotify(true);
+    setMessage("Item Removed");
+    setType("error");
   }
   return (
     <div className="cart">
@@ -27,9 +31,8 @@ export default function Cart() {
 
               <div className="item-info">
                 <span>
-                  <p style={{ margin: "0px" }}>
-                    {item.title} {item.info}
-                  </p>
+                  <p style={{ margin: "0px" }}>{item.title}</p>
+                  <span> {item.info}</span>
                 </span>
                 <span>
                   <p>

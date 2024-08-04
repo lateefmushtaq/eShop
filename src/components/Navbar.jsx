@@ -5,6 +5,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 import "../styles/Navbar.css";
+
 function Navbar() {
   const { cartData } = useContext(ProductContext);
   return (
@@ -18,6 +19,7 @@ function Navbar() {
           {cartData.length > 0 && <span id="cart">{cartData.length}</span>}
         </Link>
         <LuUser2 size={"24px"} />
+
         <IoSearchOutline size={"24px"} />
       </div>
     </header>
