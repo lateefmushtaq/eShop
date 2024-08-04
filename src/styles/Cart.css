@@ -11,6 +11,14 @@
     padding: 12px 24px;
 }
 
+
+.quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
 .cart {
 
 

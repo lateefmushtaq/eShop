@@ -8,6 +8,7 @@ export const AppProvider = ({ children }) => {
   const [notify, setNotify] = useState(false);
   const [message, setMessage] = useState("try");
   const [type, setType] = useState("");
+  const [count, setCount] = useState(0);
 
   return (
     <ProductContext.Provider
@@ -21,6 +22,8 @@ export const AppProvider = ({ children }) => {
         message,
         type,
         setType,
+        setCount,
+        count,
       }}
     >
       {children}

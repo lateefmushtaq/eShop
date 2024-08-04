@@ -3,6 +3,7 @@ import Products from "./pages/Products";
 import { AppProvider } from "./context/ProductsProvider";
 import MyCart from "./pages/MyCart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./pages/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </AppProvider>
   );
 }

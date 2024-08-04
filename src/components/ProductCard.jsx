@@ -5,14 +5,32 @@ import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 
 function ProductCard() {
-  const { Products, setCartData, cartData, setNotify, setMessage, setType } =
+  const { Products, setCartData, setNotify, setMessage, setType, setCount } =
     useContext(ProductContext);
+
   function handleClick(id) {
-    const cart = Products.find((e) => e.id === id);
-    setCartData([...cartData, cart]);
+    const product = Products.find((e) => e.id === id);
+    if (!product) {
+      console.error("Product not found");
+      return;
+    }
+    setCartData((cartData) => {
+      const exists = cartData.some((item) => item.id === id);
+      if (exists) {
+        return cartData.map((item) =>
+          item.id === id
+            ? { ...item, quantity: (item.quantity || 1) + 1 }
+            : item
+        );
+      } else {
+        return [...cartData, { ...product, quantity: 1 }];
+      }
+    });
+
     setNotify(true);
-    setMessage("Added Sucessfully");
+    setMessage("Added successfully");
     setType("success");
+    setCount((pre) => pre + 1);
   }
 
   return Products.map((product) => (
