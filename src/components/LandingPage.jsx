@@ -1,12 +1,9 @@
 import "../styles/LandingPage.css";
 import mainImage from "/images/products/sonyXb910n-1.png";
-import { ProductContext } from "../context/ProductsProvider";
-import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
-  const { Products, setCartData, cartData, setNotify, type, message } =
-    useContext(ProductContext);
-
+  const navigate = useNavigate();
   return (
     <div className="main">
       <div className="image-info">
@@ -15,7 +12,9 @@ function LandingPage() {
         <h4>
           $1200 <span id="discount">$2000</span>
         </h4>
-        <button id="ShopButton">Shop Now</button>
+        <button onClick={() => navigate("/product")} id="ShopButton">
+          Shop Now
+        </button>
       </div>
       <div className="image-container">
         <img id="image-1" src={mainImage}></img>

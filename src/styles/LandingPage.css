@@ -6,18 +6,19 @@ body {
 
 .main {
     display: flex;
-    margin: 12px;
+    margin: 24px;
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
     flex-wrap: wrap;
+
 }
 
 .image-container {
     width: 400px;
     height: auto;
     overflow: hidden;
-    margin-top: 12px;
+
 }
 
 #image-1 {

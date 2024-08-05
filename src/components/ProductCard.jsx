@@ -11,7 +11,6 @@ function ProductCard() {
   function handleClick(id) {
     const product = Products.find((e) => e.id === id);
     if (!product) {
-      console.error("Product not found");
       return;
     }
     setCartData((cartData) => {
@@ -34,7 +33,7 @@ function ProductCard() {
   }
 
   return Products.map((product) => (
-    <div className="card" key={product.id * Math.random()}>
+    <div className="card" key={product.id}>
       <div className="img-container">
         <img className="card-img" src={product.images[0]} alt={product.title} />
       </div>
