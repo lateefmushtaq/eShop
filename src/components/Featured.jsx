@@ -63,6 +63,7 @@ function Featured() {
 
   return (
     <div className="featured">
+      <h4 style={{ textAlign: "center" }}>Top Products</h4>
       <div className="tab">
         <ul>
           <li
