@@ -4,14 +4,20 @@ import "../styles/Checkout.css";
 function Checkout() {
   const { cartData } = useContext(ProductContext);
 
-  const price = cartData.reduce((acc, item) => acc + item.originalPrice, 0);
+  const price = cartData.reduce(
+    (acc, item) => (acc + item.originalPrice) * item.quantity,
+    0
+  );
 
-  const total = cartData.reduce((acc, item) => acc + item.finalPrice, 0);
+  const total = cartData.reduce(
+    (acc, item) => (acc + item.finalPrice) * item.quantity,
+    0
+  );
   const discount = price - total;
   return (
     <div>
       <div>
-        <h4>Order Summary : {cartData.length} Items</h4>
+        <h4>Order Summary : {cartData.length} </h4>
       </div>
       <div className="details">
         <div className="detail-Price">

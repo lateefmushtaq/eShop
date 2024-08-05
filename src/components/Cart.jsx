@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 
 export default function Cart() {
   const { setCartData, cartData, setNotify, setMessage, setType, setCount } =
@@ -21,7 +20,8 @@ export default function Cart() {
   }
   return (
     <div className="cart">
-      {cartData.length !== 0 ? (
+      {" "}
+      {cartData.length !== 0 &&
         cartData.map((item) => (
           <div className="cart-body">
             <div className="data">
@@ -56,7 +56,7 @@ export default function Cart() {
                 </span>
               </div>
 
-              <div class="delete">
+              <div className="delete">
                 <MdOutlineDeleteOutline
                   size={"32px"}
                   onClick={() => handleDelete(item.id)}
@@ -65,17 +65,7 @@ export default function Cart() {
             </div>
             <div>Quantity {item.quantity}</div>
           </div>
-        ))
-      ) : (
-        <div className="cart-body">
-          No Items here{" "}
-          <div className="cart-body">
-            <Link to="/product">
-              <button id="cart-button">+ ADD ITEMS</button>
-            </Link>
-          </div>
-        </div>
-      )}
+        ))}
     </div>
   );
 }

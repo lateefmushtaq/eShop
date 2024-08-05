@@ -1,5 +1,5 @@
 /* Shared styles for buttons */
-button {
+.login button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,8 +76,8 @@ button {
 
 }
 
-input[type="email"],
-input[type="password"] {
+.login input[type="email"],
+.login input[type="password"] {
     padding: 0.5em 1em;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -107,13 +107,13 @@ input[type="password"] {
     padding: 16px;
 }
 
-h4 {
+.login h4 {
     margin: 0;
     font-size: 1.25em;
 
 }
 
-p {
+.login p {
     margin: 0;
     font-size: 1em;
     color: #d6d6d6;

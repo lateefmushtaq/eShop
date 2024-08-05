@@ -30,7 +30,7 @@
     max-width: 250px;
 }
 
-p {
+.footer p {
     font-size: small;
     font-weight: 500;
     margin: 0;
@@ -38,14 +38,14 @@ p {
     transition: border-color 0.25s;
 }
 
-h5 {
+.footer h5 {
     font-size: large;
     font-weight: 800;
     margin: 0;
     cursor: pointer;
 }
 
-input {
+.footer input {
     width: 100%;
     padding: 12px 8px;
     border-radius: 4px;
@@ -54,7 +54,7 @@ input {
     margin-bottom: 10px;
 }
 
-input:focus {
+.footer input:focus {
     border: 2px solid tomato;
     background-color: #f8f8f8;
     color: black;

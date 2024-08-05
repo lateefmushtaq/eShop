@@ -1,18 +1,19 @@
-p {
+.details p {
     font-size: 1.5em;
     font-weight: 500;
+    margin-top: 0px;
+
 }
 
-h4 {
+.details h4 {
     font-size: 1.75em;
     font-weight: 700;
+    margin-top: 0px;
 }
-
 
 .details {
     display: flex;
     flex-direction: column;
-    width: 100%;
     flex-wrap: nowrap;
 }
 

@@ -1,9 +1,13 @@
 import Cart from "../components/Cart";
 import Checkout from "../components/Checkout";
+import EmptyCart from "../components/EmptyCart";
 import Navbar from "../components/Navbar";
 import Toast from "../components/Toast";
+import { ProductContext } from "../context/ProductsProvider";
+import { useContext } from "react";
 
 function MyCart() {
+  const { cartData } = useContext(ProductContext);
   const style = {
     display: "flex",
     justifyContent: "space-around",
@@ -12,10 +16,14 @@ function MyCart() {
     <>
       <Toast />
       <Navbar />
-      <div style={style}>
-        <Cart />
-        <Checkout />
-      </div>
+      {cartData.length !== 0 ? (
+        <div style={style}>
+          <Cart />
+          <Checkout />
+        </div>
+      ) : (
+        <EmptyCart />
+      )}
     </>
   );
 }
