@@ -1,15 +1,17 @@
-import Featured from "../components/Featured";
+import TopProducts from "../components/TopProducts";
 import LandingPage from "../components/LandingPage";
 import Navbar from "../components/Navbar";
-import TopProducts from "../components/TopProducts";
+import FeaturedProducts from "../components/FeaturedProducts";
+import Toast from "../components/Toast";
 
 function Home() {
   return (
     <>
       <Navbar />
+      <Toast />
       <LandingPage />
+      <FeaturedProducts />
       <TopProducts />
-      <Featured />
     </>
   );
 }

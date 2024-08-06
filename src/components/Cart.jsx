@@ -14,7 +14,7 @@ export default function Cart() {
     setNotify(true);
     setMessage("Item Removed");
     setType("error");
-    if (updatedProducts.length === 0) {
+    if (updatedData.length === 0) {
       setCount(0);
     } else setCount((pre) => pre - 1);
   }
@@ -23,7 +23,7 @@ export default function Cart() {
       {" "}
       {cartData.length !== 0 &&
         cartData.map((item) => (
-          <div className="cart-body">
+          <div className="cart-body" key={item.id}>
             <div className="data">
               <div className="quantity"> {item.quantity} </div>
               <div className="item-img">
