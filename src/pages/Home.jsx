@@ -7,13 +7,13 @@ import Favourite from "../components/Favourite";
 
 function Home() {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <Navbar />
       <Toast />
       <LandingPage />
       <FeaturedProducts />
       <TopProducts />
-    </>
+    </div>
   );
 }
 

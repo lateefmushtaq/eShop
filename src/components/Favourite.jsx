@@ -1,6 +1,6 @@
 import React, { useState, useContext, useMemo } from "react";
 import { ProductContext } from "../context/ProductsProvider";
-
+import { MdDeleteOutline } from "react-icons/md";
 export default function Favourite() {
   const { setFavourite, favourite } = useContext(ProductContext);
   function handleRemove(id) {
@@ -19,19 +19,12 @@ export default function Favourite() {
                 style={{ width: "100%" }}
               />
             </div>
-            <p style={{ color: "green" }}> {item.title}</p>
-            <button
-              style={{
-                color: "white",
-                backgroundColor: "red",
-                border: "none",
-                padding: "12px",
-              }}
+            <p style={{ color: "green" }}> {item.title}</p>{" "}
+            <MdDeleteOutline
+              size={"32px"}
+              color="red"
               onClick={() => handleRemove(item.id)}
-            >
-              {" "}
-              Remove
-            </button>
+            />
           </div>
         ))}
       </div>

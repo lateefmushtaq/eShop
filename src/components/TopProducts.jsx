@@ -4,6 +4,7 @@ import { BiCartAdd } from "react-icons/bi";
 import { FaRegHeart } from "react-icons/fa";
 import "../styles/Featured.css";
 import { handleClick } from "../utils/helper";
+import Toast from "./Toast";
 
 const productTypes = ["Headphones", "Earbuds", "Earphones", "Neckbands"];
 
@@ -36,8 +37,10 @@ function TopProducts() {
     } else {
       const favProduct = Products.find((item) => item.id === id);
       setFavourite([...favourite, favProduct]);
+      setNotify(true);
+      setMessage("Added to favourites");
+      setType("success");
     }
-    console.log(favourite);
   }
 
   function handleTopProducts(productType) {

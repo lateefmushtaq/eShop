@@ -13,7 +13,6 @@ function FeaturedProducts() {
       style={{
         display: "flex",
         flexDirection: "column",
-        height: "     75vh",
         alignItems: "center",
       }}
     >

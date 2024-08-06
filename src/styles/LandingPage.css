@@ -10,7 +10,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     box-sizing: border-box;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 
 }
 
@@ -18,12 +18,15 @@ body {
     width: 400px;
     height: auto;
     overflow: hidden;
+    margin-top: 20px;
+
 
 }
 
 #image-1 {
     width: 100%;
     object-fit: cover;
+
 }
 
 .image-info {

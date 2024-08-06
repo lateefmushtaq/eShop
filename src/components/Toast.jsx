@@ -7,11 +7,11 @@ import { ProductContext } from "../context/ProductsProvider";
 export default function Toast() {
   const { cartData, notify, setNotify, message, type, count } =
     useContext(ProductContext);
-  const displayMessage = `${message} (${count})`;
+
   useEffect(() => {
     if (notify && type) {
-      toast[type](displayMessage, {
-        position: "top-left",
+      toast[type](message, {
+        position: "top-center",
         autoClose: 4000,
         hideProgressBar: true,
         closeOnClick: true,
