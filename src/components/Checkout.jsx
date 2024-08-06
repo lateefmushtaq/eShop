@@ -15,7 +15,7 @@ function Checkout() {
   );
   const discount = price - total;
   return (
-    <div>
+    <div className="container">
       <div>
         <h4>Order Summary : {cartData.length} </h4>
       </div>

@@ -14,7 +14,8 @@
 .details {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .detail-Price {
@@ -65,4 +66,10 @@
     transition: border-color 0.25s;
     min-width: 100%;
     box-shadow: 0px 2px 2px #d9dadd55;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }

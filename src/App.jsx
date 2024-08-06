@@ -4,6 +4,7 @@ import { AppProvider } from "./context/ProductsProvider";
 import MyCart from "./pages/MyCart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./pages/Footer";
+import FavouriteProducts from "./pages/FavouriteProducts";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/product" element={<Products />} />
           <Route path="/cart" element={<MyCart />} />
           <Route path="*" element={<Home />} />
+          <Route path="/favourite" element={<FavouriteProducts />} />
         </Routes>
       </BrowserRouter>
 

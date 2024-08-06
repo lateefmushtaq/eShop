@@ -9,7 +9,6 @@ function ProductCard() {
   const { Products, setCartData, setNotify, setMessage, setType, setCount } =
     useContext(ProductContext);
   return Products.map((product) => {
-    console.log(product.title, "> ", product.images);
     return (
       <div className="card" key={product.id}>
         <div className="img-container">

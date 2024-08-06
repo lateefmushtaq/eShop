@@ -9,6 +9,7 @@ export const AppProvider = ({ children }) => {
   const [message, setMessage] = useState("try");
   const [type, setType] = useState("");
   const [count, setCount] = useState(0);
+  const [favourite, setFavourite] = useState([]);
 
   return (
     <ProductContext.Provider
@@ -24,6 +25,8 @@ export const AppProvider = ({ children }) => {
         setType,
         setCount,
         count,
+        favourite,
+        setFavourite,
       }}
     >
       {children}

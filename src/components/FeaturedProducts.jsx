@@ -9,8 +9,16 @@ function FeaturedProducts() {
   );
 
   return (
-    <>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "     75vh",
+        alignItems: "center",
+      }}
+    >
       <h4 id="heading">Featured Products</h4>
+
       <div className="top-container">
         {featured &&
           featured.map((product) => (
@@ -18,12 +26,12 @@ function FeaturedProducts() {
               <p id="title">{product.title}</p>
               <img src={product.images[0]} alt="" className="top-image" />
               <p id="price-id">
-                {product.finalPrice} <span>{product.originalPrice}</span>
+                ${product.finalPrice} <span>{product.originalPrice}</span>
               </p>
             </div>
           ))}
       </div>
-    </>
+    </div>
   );
 }
 

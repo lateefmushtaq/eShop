@@ -10,7 +10,8 @@ function MyCart() {
   const { cartData } = useContext(ProductContext);
   const style = {
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    flexWrap: "wrap",
   };
   return (
     <>
