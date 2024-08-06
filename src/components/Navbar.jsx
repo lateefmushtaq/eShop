@@ -1,29 +1,31 @@
 import { Link } from "react-router-dom";
-import { IoCartOutline } from "react-icons/io5";
-import { LuUser2 } from "react-icons/lu";
-import { IoSearchOutline } from "react-icons/io5";
+import { FaCartArrowDown } from "react-icons/fa6";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import "../styles/Navbar.css";
 
 function Navbar() {
-  const { cartData } = useContext(ProductContext);
+  const { cartData, favourite } = useContext(ProductContext);
   return (
     <header className="header">
-      <Link to={"/"}>eShop</Link>
-      <Link to={"/product"}>Products</Link>
+      <div className="logo">
+        <Link to={"/"}>eShop</Link>
+      </div>
 
       <div className="navIcons">
         <Link to={"/favourite"}>
           <FaRegHeart size={"24px"} />
+          <span className="badge badge-warning" id="lblCartCount">
+            {favourite && favourite.length}
+          </span>
         </Link>
         <Link to={"/cart"}>
-          <IoCartOutline size={"24px"} />
-          {cartData.length > 0 && <span id="cart">{cartData.length}</span>}
+          <FaCartArrowDown size={"24px"} />
+          <span className="badge badge-warning" id="lblCartCount">
+            {cartData && cartData.length}
+          </span>
         </Link>
-        <LuUser2 size={"24px"} />
-        <IoSearchOutline size={"24px"} />
       </div>
     </header>
   );

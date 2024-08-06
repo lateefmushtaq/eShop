@@ -10,9 +10,18 @@ export default function Favourite() {
     <>
       <div style={{ height: "75vh" }}>
         {favourite.map((item, i) => (
-          <div className="main">
+          <div
+            className="main"
+            key={item.id}
+            style={{ backgroundColor: "#2d2d2d" }}
+          >
             <p>{i + 1}</p>
-            <div className="image-container-fav" style={{ width: "50px" }}>
+            <div
+              className="image-container-fav"
+              style={{
+                width: "50px",
+              }}
+            >
               <img
                 src={item.images[0]}
                 alt={item.title}
