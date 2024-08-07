@@ -15,11 +15,11 @@ function Checkout() {
   );
   const discount = price - total;
   return (
-    <div className="container">
-      <div>
-        <h4>Order Summary : {cartData.length} </h4>
-      </div>
-      <div className="details">
+    <div>
+      <div className="checkout-container">
+        <div>
+          <h4>Order Summary : {cartData.length} </h4>
+        </div>
         <div className="detail-Price">
           <span>
             <p> Price</p>{" "}
@@ -49,9 +49,9 @@ function Checkout() {
           <h4>Total Price </h4>
           <h4>{total} </h4>
         </div>
-      </div>
 
-      <button id="checkout-button">Checkout</button>
+        <button id="checkout-button">Checkout</button>
+      </div>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 
 export default function Cart() {
-  const { setCartData, cartData, setNotify, setMessage, setType, setCount } =
+  const { setCartData, cartData, setNotify, setMessage, setType } =
     useContext(ProductContext);
 
   function handleDelete(id) {
@@ -14,18 +14,16 @@ export default function Cart() {
     setNotify(true);
     setMessage("Item Removed");
     setType("error");
-    if (updatedData.length === 0) {
-      setCount(0);
-    } else setCount((pre) => pre - 1);
   }
   return (
-    <div className="cart">
-      {" "}
+    <div>
       {cartData.length !== 0 &&
         cartData.map((item) => (
-          <div className="cart-body" key={item.id}>
-            <div className="data">
-              <div className="quantity"> {item.quantity} </div>
+          <div className="cart-container" key={item.id}>
+            <div className="cart">
+              <div className="quantity">
+                <p>Quantity: {item.quantity}</p>
+              </div>
               <div className="item-img">
                 <img
                   src={item.images[0]}
@@ -33,11 +31,9 @@ export default function Cart() {
                   className="card-img"
                 />
               </div>
-
               <div className="item-info">
                 <span>
-                  <p style={{ margin: "0px" }}>{item.title}</p>
-
+                  <p>{item.title}</p>
                   <span> {item.info}</span>
                 </span>
                 <span>
@@ -55,15 +51,13 @@ export default function Cart() {
                   </p>
                 </span>
               </div>
-
               <div className="delete">
-                <MdOutlineDeleteOutline
-                  size={"32px"}
-                  onClick={() => handleDelete(item.id)}
-                />
+                <button id="delete-btn" onClick={() => handleDelete(item.id)}>
+                  <MdOutlineDeleteOutline style={{ marginRight: "4px" }} />{" "}
+                  Remove from cart
+                </button>
               </div>
             </div>
-            <div>Quantity {item.quantity}</div>
           </div>
         ))}
     </div>

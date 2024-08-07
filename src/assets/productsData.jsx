@@ -67,27 +67,7 @@ const productsData = [
     rateCount: 5,
     path: "/product-details/",
   },
-  {
-    id: 4,
-    images: [
-      "/images/products/boat110-1.png",
-      "/images/products/boat110-2.png",
-      "/images/products/boat110-3.png",
-      "/images/products/boat110-4.png",
-    ],
-    brand: "boAt",
-    title: "boAt BassHeads 110",
-    info: "In-Ear Wired Earphones",
-    category: "Earphones",
-    type: "In Ear",
-    connectivity: "Wired",
-    finalPrice: 449,
-    originalPrice: 999,
-    quantity: 1,
-    ratings: 556,
-    rateCount: 4,
-    path: "/product-details/",
-  },
+
   {
     id: 5,
     images: [

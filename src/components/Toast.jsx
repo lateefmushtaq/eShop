@@ -11,8 +11,8 @@ export default function Toast() {
   useEffect(() => {
     if (notify && type) {
       toast[type](message, {
-        position: "top-center",
-        autoClose: 4000,
+        position: "top-left",
+        autoClose: 3000,
         hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,

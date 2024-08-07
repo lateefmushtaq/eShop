@@ -17,6 +17,7 @@
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+    margin-right: 12px;
 }
 
 .navIcons a {
@@ -28,6 +29,7 @@
 .logo a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    margin-left: 12px;
 }
 
 .badge {

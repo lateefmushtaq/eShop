@@ -12,7 +12,7 @@ export function handleClick(
     return;
   }
   setCartData((cartData) => {
-    const exists = cartData.some((item) => item.id === id);
+    const exists = cartData && cartData.some((item) => item.id === id);
     if (exists) {
       return cartData.map((item) =>
         item.id === id ? { ...item, quantity: (item.quantity || 1) + 1 } : item

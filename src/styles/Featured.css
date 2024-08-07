@@ -59,7 +59,7 @@
 .product-item {
     cursor: pointer;
     padding: 10px;
-    border-radius: 5px;
+
     transition: background-color 0.3s, font-weight 0.3s;
 }
 
@@ -100,7 +100,6 @@
     align-items: center;
     color: white;
     border: 1px solid transparent;
-
     border: 1px solid tomato;
     padding: 0.5em 1em;
     font-size: 0.75em;
@@ -132,14 +131,13 @@
     gap: 24px;
     cursor: pointer;
     padding: 0px;
-
-
+    border: 2px solid tomato
 }
 
 .tab ul li {
     font-size: 16px;
     padding: 8px 12px;
-    border-radius: 4px;
+
 }
 
 
@@ -198,7 +196,7 @@ Featured Products
     font-weight: 800;
     text-align: center;
     padding: 12px;
-    border-radius: 2px;
+
 
 
 

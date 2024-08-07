@@ -1,7 +1,7 @@
 import "../styles/LandingPage.css";
 import mainImage from "/images/products/sonyXb910n-1.png";
 import { useNavigate } from "react-router-dom";
-
+import { FaLongArrowAltRight } from "react-icons/fa";
 function LandingPage() {
   const navigate = useNavigate();
   return (
@@ -13,7 +13,7 @@ function LandingPage() {
           $1200 <span id="discount">$2000</span>
         </h4>
         <button onClick={() => navigate("/product")} id="ShopButton">
-          Shop Now
+          Shop Now <FaLongArrowAltRight style={{ marginLeft: "4px" }} />
         </button>
       </div>
       <div className="image-container">
