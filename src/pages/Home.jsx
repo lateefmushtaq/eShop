@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import FeaturedProducts from "../components/FeaturedProducts";
 import Toast from "../components/Toast";
 import Favourite from "../components/Favourite";
+import ProductDetails from "../components/ProductDetails";
 
 function Home() {
   return (

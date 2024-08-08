@@ -12,7 +12,7 @@ function LandingPage() {
         <h4>
           $1200 <span id="discount">$2000</span>
         </h4>
-        <button onClick={() => navigate("/product")} id="ShopButton">
+        <button onClick={() => navigate("/products")} id="ShopButton">
           Shop Now <FaLongArrowAltRight style={{ marginLeft: "4px" }} />
         </button>
       </div>

@@ -4,13 +4,19 @@ import { BiCartAdd } from "react-icons/bi";
 import { handleClick } from "../utils/helper";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProductCard() {
+  const navigate = useNavigate();
   const { Products, setCartData, setNotify, setMessage, setType, setCount } =
     useContext(ProductContext);
   return Products.map((product) => {
     return (
-      <div className="card" key={product.id}>
+      <div
+        className="card"
+        key={product.id}
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
         <div className="img-container">
           <img
             className="card-img"
