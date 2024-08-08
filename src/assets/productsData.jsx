@@ -278,7 +278,7 @@ const productsData = [
     type: "In Ear",
     connectivity: "Wireless",
     finalPrice: 1074,
-    originalPrice: 399,
+    originalPrice: 1399,
     quantity: 1,
     ratings: 1340,
     rateCount: 5,

@@ -4,7 +4,6 @@ import { BiCartAdd } from "react-icons/bi";
 import { FaRegHeart } from "react-icons/fa";
 import "../styles/Featured.css";
 import { handleClick } from "../utils/helper";
-import Toast from "./Toast";
 
 const productTypes = ["Headphones", "Earbuds", "Earphones", "Neckbands"];
 

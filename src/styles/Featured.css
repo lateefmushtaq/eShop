@@ -138,6 +138,7 @@
     font-size: 16px;
     padding: 8px 12px;
 
+
 }
 
 
@@ -171,6 +172,7 @@ Featured Products
     max-width: 100%;
     height: auto;
     margin-bottom: 12px;
+    cursor: pointer;
 
 }
 
