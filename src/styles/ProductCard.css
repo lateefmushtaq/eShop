@@ -4,6 +4,7 @@
     background-color: rgb(58, 58, 58);
     color: black;
     padding: 12px 24px;
+    cursor: pointer;
 }
 
 .card-img {

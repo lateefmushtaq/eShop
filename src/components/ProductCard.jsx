@@ -12,16 +12,13 @@ function ProductCard() {
     useContext(ProductContext);
   return Products.map((product) => {
     return (
-      <div
-        className="card"
-        key={product.id}
-        onClick={() => navigate(`/product/${product.id}`)}
-      >
+      <div className="card" key={product.id}>
         <div className="img-container">
           <img
             className="card-img"
             src={product.images[0]}
             alt={product.title}
+            onClick={() => navigate(`/product/${product.id}`)}
           />
         </div>
         <div className="card-details">

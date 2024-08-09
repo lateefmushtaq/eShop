@@ -6,6 +6,9 @@ import "../styles/Product.css";
 import { handleClick } from "../utils/helper";
 import { MdOutlineDone } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
+import Overview from "./Overview";
+import Reviews from "./Reviews";
+import Specifications from "./Specifications";
 function ProductDetails() {
   const { id } = useParams();
   const { Products, setCartData, setNotify, setMessage, setType, setCount } =
@@ -57,9 +60,8 @@ function ProductDetails() {
           <p>{product.info}</p>
           <div className="rating">
             <span>
-              {[...Array(product.rateCount || 0)].map((_, index) => (
-                <FaStar key={index} />
-              ))}
+              {"★".repeat(product.rateCount)}
+              {"☆".repeat(5 - product.rateCount)}
             </span>
             <span> Ratings: {product.ratings}</span>
           </div>
@@ -103,6 +105,16 @@ function ProductDetails() {
           </button>
         </div>
       </div>
+      <Overview name={product.title} />
+      <Reviews />
+      <Specifications
+        Brand={product.brand}
+        model={product.title}
+        type={product.type}
+        connectivity={product.connectivity}
+        microphone={product.microphone}
+        category={product.category}
+      />
     </>
   );
 }

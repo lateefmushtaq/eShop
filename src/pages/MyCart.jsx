@@ -12,7 +12,7 @@ function MyCart() {
     maxWidth: "100%",
     display: "flex",
     justifyContent: "space-evenly",
-    flexWrap: "wrap",
+    flexWrap: "wrap-reverse",
   };
   return (
     <>
