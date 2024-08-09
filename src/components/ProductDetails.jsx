@@ -6,9 +6,7 @@ import "../styles/Product.css";
 import { handleClick } from "../utils/helper";
 import { MdOutlineDone } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
-import Overview from "./Overview";
-import Reviews from "./Reviews";
-import Specifications from "./Specifications";
+import ProductOverview from "../pages/ProductOverview";
 function ProductDetails() {
   const { id } = useParams();
   const { Products, setCartData, setNotify, setMessage, setType, setCount } =
@@ -105,9 +103,8 @@ function ProductDetails() {
           </button>
         </div>
       </div>
-      <Overview name={product.title} />
-      <Reviews />
-      <Specifications
+      <ProductOverview
+        name={product.title}
         Brand={product.brand}
         model={product.title}
         type={product.type}

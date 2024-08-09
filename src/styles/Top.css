@@ -45,3 +45,30 @@
     padding: 12px 24px;
 
 }
+
+/* ProductOverview.css */
+.tab-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    background-color: tomato;
+    margin: 0;
+}
+
+.tab-list li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab-list li:hover,
+.tab-list li.active {
+    background-color: white;
+    color: tomato;
+}
+
+.content-area {
+
+    padding: 20px;
+    margin-top: 5px;
+}
