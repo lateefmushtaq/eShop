@@ -4,12 +4,24 @@ export const ProductContext = createContext({});
 
 export const AppProvider = ({ children }) => {
   const Products = productsData;
-  const [cartData, setCartData] = useState([]);
+  const [cartData, setCartData] = useState(() => {
+    const savedCart = localStorage.getItem("Cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
   const [notify, setNotify] = useState(false);
   const [message, setMessage] = useState("try");
   const [type, setType] = useState("");
-  const [count, setCount] = useState(0);
-  const [favourite, setFavourite] = useState([]);
+  const [favourite, setFavourite] = useState(() => {
+    const favItem = localStorage.getItem("Favourite");
+    return favItem ? JSON.parse(favItem) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("Cart", JSON.stringify(cartData));
+  }, [cartData]);
+  useEffect(() => {
+    localStorage.setItem("Favourite", JSON.stringify(favourite));
+  }, [favourite]);
 
   return (
     <ProductContext.Provider
@@ -23,8 +35,6 @@ export const AppProvider = ({ children }) => {
         message,
         type,
         setType,
-        setCount,
-        count,
         favourite,
         setFavourite,
       }}
