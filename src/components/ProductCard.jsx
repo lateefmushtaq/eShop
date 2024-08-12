@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 function ProductCard() {
   const navigate = useNavigate();
-  const { Products, setCartData, setNotify, setMessage, setType, setCount } =
+  const { Products, setCartData, setNotify, setMessage, setType } =
     useContext(ProductContext);
   return Products.map((product) => {
     return (
@@ -48,7 +48,6 @@ function ProductCard() {
                 setNotify,
                 setMessage,
                 setType,
-                setCount,
                 Products
               )
             }

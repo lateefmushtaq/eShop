@@ -2,6 +2,7 @@ import React, { useState, useContext, useMemo } from "react";
 import { ProductContext } from "../context/ProductsProvider";
 import { BiCartAdd } from "react-icons/bi";
 import { FaRegHeart } from "react-icons/fa";
+import { VscHeartFilled } from "react-icons/vsc";
 import "../styles/Featured.css";
 import { handleClick } from "../utils/helper";
 
@@ -14,7 +15,6 @@ function TopProducts() {
     setNotify,
     setMessage,
     setType,
-    setCount,
     setFavourite,
     favourite,
   } = useContext(ProductContext);
@@ -79,8 +79,9 @@ function TopProducts() {
                 <hr id="divider" />
                 <div className="cartBtn">
                   <h4 style={{ margin: "16px 0px" }}>${product.finalPrice}</h4>
-                  <button
-                    id="cart-button-icon"
+
+                  <BiCartAdd
+                    style={{ fontSize: "32px", cursor: "pointer" }}
                     onClick={() =>
                       handleClick(
                         product.id,
@@ -88,23 +89,30 @@ function TopProducts() {
                         setNotify,
                         setMessage,
                         setType,
-                        setCount,
                         Products
                       )
                     }
-                  >
-                    <BiCartAdd style={{ fontSize: "24px" }} />
-                  </button>
-
-                  <FaRegHeart
-                    style={{
-                      fontSize: "24px",
-                      color: favourite.some((item) => item.id === product.id)
-                        ? "red"
-                        : "",
-                    }}
-                    onClick={() => handleFavourite(product.id)}
                   />
+
+                  <div onClick={() => handleFavourite(product.id)}>
+                    {" "}
+                    {favourite.some((item) => item.id === product.id) ? (
+                      <FaRegHeart
+                        style={{
+                          fontSize: "32px",
+                          cursor: "pointer",
+                        }}
+                      />
+                    ) : (
+                      <VscHeartFilled
+                        style={{
+                          fontSize: "32px",
+                          color: "red",
+                          cursor: "pointer",
+                        }}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

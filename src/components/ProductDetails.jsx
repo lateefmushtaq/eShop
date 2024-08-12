@@ -8,7 +8,7 @@ import { MdOutlineDone } from "react-icons/md";
 import ProductOverview from "../pages/ProductOverview";
 function ProductDetails() {
   const { id } = useParams();
-  const { Products, setCartData, setNotify, setMessage, setType, setCount } =
+  const { Products, setCartData, setNotify, setMessage, setType } =
     useContext(ProductContext);
 
   const product = Products.find((product) => product.id === parseInt(id));
@@ -91,7 +91,6 @@ function ProductDetails() {
                 setNotify,
                 setMessage,
                 setType,
-                setCount,
                 Products
               )
             }

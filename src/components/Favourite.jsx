@@ -12,7 +12,7 @@ export default function Favourite() {
     setNotify,
     setMessage,
     setType,
-    setCount,
+
     Products,
   } = useContext(ProductContext);
 
@@ -58,7 +58,7 @@ export default function Favourite() {
                   setNotify,
                   setMessage,
                   setType,
-                  setCount,
+
                   Products
                 )
               }

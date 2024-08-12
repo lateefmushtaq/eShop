@@ -29,10 +29,13 @@ export const Login = ({ isOpen }) => {
           </div>
 
           <div className="input-field">
-            <span id="login-text">Welcome to eShop</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <button id="login-button">Login</button>
+            <form>
+              {" "}
+              <span id="login-text">Welcome to eShop</span>
+              <input type="email" placeholder="example@eshop.com" disabled />
+              <input type="password" placeholder="**********" disabled />
+              <button id="login-button">Login</button>
+            </form>
           </div>
           <div className="divider">
             <hr id="divide" />

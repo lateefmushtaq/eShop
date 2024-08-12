@@ -4,7 +4,6 @@ export function handleClick(
   setNotify,
   setMessage,
   setType,
-  setCount,
   Products
 ) {
   const product = Products.find((e) => e.id === id);
@@ -25,5 +24,4 @@ export function handleClick(
   setNotify(true);
   setMessage("Added successfully");
   setType("success");
-  setCount((pre) => pre + 1);
 }
