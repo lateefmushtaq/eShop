@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductsProvider";
-import { MdDeleteOutline } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 import { handleClick } from "../utils/helper";
-import { BiCartAdd } from "react-icons/bi";
 import "../styles/Favourite.css";
+import { IoBagAdd } from "react-icons/io5";
 
 export default function Favourite() {
   const {
@@ -22,22 +22,35 @@ export default function Favourite() {
   }
 
   return (
-    <div style={{ height: "75vh" }}>
-      {favourite.map((item, i) => (
-        <div className="main" key={item.id}>
-          <p>{i + 1}</p>
+    <div>
+      {favourite.map((item) => (
+        <div className="fav-main" key={item.id}>
           <div className="image-container-fav">
             <img src={item.images[0]} alt={item.title} />
           </div>
-          <p className="item-title">{item.title}</p>
+          <div className="item-title">
+            <div className="item-title-heading">
+              <p> Item Name:</p>
+            </div>
+            <div>
+              <p>{item.title}</p>
+            </div>
+          </div>
+          <div className="item-title">
+            <div className="item-title-heading">
+              <p> Item Price:</p>
+            </div>
+            <div>
+              <p>${item.finalPrice}</p>
+            </div>
+          </div>
           <div style={{ display: "flex", gap: "24px" }}>
-            <MdDeleteOutline
-              size="32px"
+            <MdDelete
               className="delete-icon"
+              size={"24px"}
               onClick={() => handleRemove(item.id)}
             />
-
-            <BiCartAdd
+            <button
               className="cart-button-icon"
               onClick={() =>
                 handleClick(
@@ -50,7 +63,9 @@ export default function Favourite() {
                   Products
                 )
               }
-            />
+            >
+              Add to cart
+            </button>
           </div>
         </div>
       ))}
