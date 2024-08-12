@@ -17,7 +17,7 @@ function Checkout() {
   return (
     <div>
       <div className="checkout-container">
-        <div>
+        <div className="checkout-container-title">
           <h4>Order Summary : {cartData.length} </h4>
         </div>
         <div className="detail-Price">

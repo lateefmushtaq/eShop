@@ -44,7 +44,8 @@ export default function Favourite() {
               <p>${item.finalPrice}</p>
             </div>
           </div>
-          <div style={{ display: "flex", gap: "24px" }}>
+
+          <div style={{ display: "flex", gap: "24px" }} className="actions">
             <MdDelete
               className="delete-icon"
               size={"24px"}

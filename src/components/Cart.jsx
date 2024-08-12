@@ -3,16 +3,16 @@ import React, { useState } from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
+import { LiaTimesSolid } from "react-icons/lia";
 
 export default function Cart() {
   const { setCartData, cartData, setNotify, setMessage, setType } =
     useContext(ProductContext);
-
   function handleDelete(id) {
     const updatedData = cartData.filter((e) => e.id !== id);
     setCartData(updatedData);
     setNotify(true);
-    setMessage("Item Removed");
+    setMessage("Item Removed From Cart");
     setType("error");
   }
   return (
@@ -22,7 +22,8 @@ export default function Cart() {
           <div className="cart-container" key={item.id}>
             <div className="cart">
               <div className="quantity">
-                <p>Quantity: {item.quantity}</p>
+                <p> {item.quantity}</p>
+                <LiaTimesSolid size={"12px"} />
               </div>
               <div className="item-img">
                 <img
@@ -38,7 +39,7 @@ export default function Cart() {
                 </span>
                 <span>
                   <p>
-                    {item.finalPrice}{" "}
+                    ${item.finalPrice}{" "}
                     <span
                       style={{
                         textDecoration: "line-through",
@@ -51,11 +52,11 @@ export default function Cart() {
                   </p>
                 </span>
               </div>
-              <div className="delete">
-                <button id="delete-btn" onClick={() => handleDelete(item.id)}>
-                  <MdOutlineDeleteOutline style={{ marginRight: "4px" }} />{" "}
-                  Remove from cart
-                </button>
+              <div className="item-info">
+                <MdOutlineDeleteOutline
+                  className="delete-icon"
+                  onClick={() => handleDelete(item.id)}
+                />
               </div>
             </div>
           </div>
