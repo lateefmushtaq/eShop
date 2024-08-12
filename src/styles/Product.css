@@ -10,9 +10,7 @@
 }
 
 .image-small {
-    display: flex;
     width: 150px;
-
 }
 
 #activesmallImage {
@@ -61,5 +59,25 @@
     justify-content: center;
     align-items: center;
     border-radius: 2px;
+
+}
+
+@media (max-width: 768px) {
+    .main-image-product {
+        max-width: 200px;
+    }
+
+    .image-small {
+        width: 15%;
+    }
+
+    #activesmallImage {
+        border: 1px solid tomato;
+    }
+
+    #smallImage {
+        border: 1px solid transparent;
+    }
+
 
 }

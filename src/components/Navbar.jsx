@@ -4,9 +4,15 @@ import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 import { FaRegHeart } from "react-icons/fa";
 import "../styles/Navbar.css";
+import { LuUser2 } from "react-icons/lu";
+import { Login } from "./Login";
 
 function Navbar() {
-  const { cartData, favourite } = useContext(ProductContext);
+  const { cartData, favourite, isModalOpen, setModalOpen } =
+    useContext(ProductContext);
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
   return (
     <header className="header">
       <div className="logo">
@@ -14,6 +20,15 @@ function Navbar() {
       </div>
 
       <div className="navIcons">
+        <div>
+          {" "}
+          <LuUser2 size={"24px"} onClick={openModal} />
+          <span className="badge badge-warning" id="lblCartCount">
+            {"!"}
+          </span>
+        </div>
+        <Login isOpen={isModalOpen} onClose={closeModal} />
+
         <Link to={"/favourite"}>
           <FaRegHeart size={"24px"} />
           <span className="badge badge-warning" id="lblCartCount">

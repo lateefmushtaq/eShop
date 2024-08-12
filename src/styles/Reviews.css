@@ -1,5 +1,5 @@
 .reviews-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -7,7 +7,8 @@
 .reviews-title {
     text-align: center;
     color: tomato;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
 }
 
 .review-card {
@@ -16,7 +17,7 @@
     padding: 15px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 1200px;
 }
 
 .review-header {
@@ -70,7 +71,8 @@
 /* overview */
 /* styles/Overview.css */
 .overview-container {
-    max-width: 80%;
+
+    max-width: 70%;
     margin: 0 auto;
     padding: 24px;
     line-height: 1.6;
@@ -93,10 +95,10 @@
 
 
 /* specs8?*/
-/* styles/Specifications.css */
+
 
 .specifications-container {
-    max-width: 1200px;
+    width: 800px;
     margin: 0 auto;
     padding: 20px;
 }
@@ -120,17 +122,25 @@
 }
 
 .specifications-table td {
-    color: #333;
+    color: tomato;
 }
 
-.specifications-table tr:hover {
-    background-color: #f1f1f1;
-}
+
 
 @media (max-width: 768px) {
 
     .specifications-table th,
     .specifications-table td {
         padding: 8px;
+    }
+
+    .review-card {
+        width: 100%;
+    }
+
+    .specifications-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
     }
 }

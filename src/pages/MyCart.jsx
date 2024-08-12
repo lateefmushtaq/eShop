@@ -1,11 +1,11 @@
 import Cart from "../components/Cart";
-import EmptyCart from "../components/EmptyCart";
+import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Toast from "../components/Toast";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 import Checkout from "../components/Checkout";
-
+import "../styles/Cart.css";
 function MyCart() {
   const { cartData } = useContext(ProductContext);
   const style = {
@@ -28,7 +28,14 @@ function MyCart() {
           </div>
         </div>
       ) : (
-        <EmptyCart />
+        <div className="empty-cart-body" style={{ height: "75vh" }}>
+          <h4>No Items</h4>
+          <div className="ecart-container">
+            <Link to="/product">
+              <button id="empty-cart-button">+ Add products</button>
+            </Link>
+          </div>
+        </div>
       )}
     </>
   );

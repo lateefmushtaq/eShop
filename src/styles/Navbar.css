@@ -23,6 +23,7 @@
 .navIcons a {
     color: rgb(255, 255, 255, .8);
     font-size: 1.5rem;
+    width: 40px;
 
 }
 

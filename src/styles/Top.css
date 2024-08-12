@@ -51,8 +51,10 @@
     list-style-type: none;
     padding: 0;
     display: flex;
-    background-color: tomato;
-    margin: 0;
+    justify-content: space-between;
+    border: 1px solid tomato;
+    margin: 12px;
+    width: 350px;
 }
 
 .tab-list li {
@@ -63,8 +65,8 @@
 
 .tab-list li:hover,
 .tab-list li.active {
-    background-color: white;
-    color: tomato;
+    color: white;
+    background-color: tomato;
 }
 
 .content-area {
@@ -73,11 +75,32 @@
     margin-top: 5px;
 }
 
-@media only screen and (max-width: 600px) {
-    .checkout-container {
+@media screen and (max-width:600px) {
+    .tab-list {
+        list-style-type: none;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        min-width: 350px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 24px;
+        width: 150px;
+        border: none;
+    }
 
+    .tab-list li {
+        padding: 10px 20px;
+        width: 100%;
+        cursor: pointer;
+
+        transition: background-color 0.3s ease;
+    }
+
+    .tab-list li:hover,
+    .tab-list li.active {
+        color: white;
+        background-color: tomato;
+        font-weight: 600;
     }
 }

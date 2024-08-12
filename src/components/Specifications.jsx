@@ -5,7 +5,7 @@ import "../styles/Reviews.css";
 function Specifications({ Brand, category, model, type, connectivity }) {
   return (
     <div className="specifications-container">
-      <h2>Product Specifications</h2>
+      <h1 className="reviews-title"> Specifications</h1>
       <table className="specifications-table">
         <tbody>
           <tr>

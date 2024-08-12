@@ -1,5 +1,5 @@
 import "../styles/Cart.css";
-import React, { useState } from "react";
+import React from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
@@ -52,7 +52,7 @@ export default function Cart() {
                   </p>
                 </span>
               </div>
-              <div className="item-info">
+              <div className="item-info-del">
                 <MdOutlineDeleteOutline
                   className="delete-icon"
                   onClick={() => handleDelete(item.id)}

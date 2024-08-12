@@ -3,6 +3,7 @@ import productsData from "../assets/productsData";
 export const ProductContext = createContext({});
 
 export const AppProvider = ({ children }) => {
+  const [isModalOpen, setModalOpen] = useState(false);
   const Products = productsData;
   const [cartData, setCartData] = useState(() => {
     const savedCart = localStorage.getItem("Cart");
@@ -37,6 +38,8 @@ export const AppProvider = ({ children }) => {
         setType,
         favourite,
         setFavourite,
+        isModalOpen,
+        setModalOpen,
       }}
     >
       {children}

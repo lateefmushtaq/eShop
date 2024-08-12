@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import { AppProvider } from "./context/ProductsProvider";

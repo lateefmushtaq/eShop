@@ -20,7 +20,14 @@ function ProductOverview({
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <ul className="tab-list">
         <li
           className={activeTab === "specifications" ? "active" : ""}

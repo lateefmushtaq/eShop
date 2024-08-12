@@ -5,7 +5,6 @@ import { useContext } from "react";
 import "../styles/Product.css";
 import { handleClick } from "../utils/helper";
 import { MdOutlineDone } from "react-icons/md";
-import { FaStar } from "react-icons/fa";
 import ProductOverview from "../pages/ProductOverview";
 function ProductDetails() {
   const { id } = useParams();
@@ -35,7 +34,6 @@ function ProductDetails() {
           <div className="div">
             {product.images.map((image, i) => (
               <div style={{ padding: "8px" }}>
-                {" "}
                 <img
                   key={i}
                   id={isSelected === i ? "activesmallImage" : "smallImage"}
@@ -49,7 +47,6 @@ function ProductDetails() {
           </div>
         </div>
         <div className="main-image-product">
-          {" "}
           <img src={img} style={{ objectFit: "cover", maxWidth: "100%" }} />
         </div>
 
@@ -103,6 +100,7 @@ function ProductDetails() {
           </button>
         </div>
       </div>
+      <hr id="divider" />
       <ProductOverview
         name={product.title}
         Brand={product.brand}
