@@ -3,7 +3,6 @@ import { ProductContext } from "../context/ProductsProvider";
 import { MdDelete } from "react-icons/md";
 import { handleClick } from "../utils/helper";
 import "../styles/Favourite.css";
-import { IoBagAdd } from "react-icons/io5";
 
 export default function Favourite() {
   const {
@@ -47,8 +46,7 @@ export default function Favourite() {
 
           <div style={{ display: "flex", gap: "24px" }} className="actions">
             <MdDelete
-              className="delete-icon"
-              size={"24px"}
+              className="fav-delete-icon"
               onClick={() => handleRemove(item.id)}
             />
             <button
