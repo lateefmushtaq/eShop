@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Reviews.css";
 
 function Overview({ name }) {

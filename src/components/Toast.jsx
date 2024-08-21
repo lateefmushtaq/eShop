@@ -1,11 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { toast, ToastContainer, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useContext } from "react";
 import { ProductContext } from "../context/ProductsProvider";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Toast() {
-  const { cartData, notify, setNotify, message, type, count } =
+  const { cartData, notify, setNotify, message, type } =
     useContext(ProductContext);
 
   useEffect(() => {

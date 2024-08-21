@@ -1,5 +1,6 @@
 import Navbar from "../components/Navbar";
 import ProductCard from "../components/ProductCard";
+
 import Toast from "../components/Toast";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext, useEffect } from "react";
@@ -11,9 +12,9 @@ export default function Products() {
     <>
       <Navbar />
       <Toast type={type} message={message} />
+
       <div className="main" style={{ display: "flex" }}>
         <ProductCard />
-        <div></div>
       </div>
     </>
   );

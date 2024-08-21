@@ -1,5 +1,4 @@
 import "../styles/Cart.css";
-import React from "react";
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";

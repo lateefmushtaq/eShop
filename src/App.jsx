@@ -1,27 +1,31 @@
-import { useState } from "react";
-import Home from "./pages/Home";
-import Products from "./pages/Products";
 import { AppProvider } from "./context/ProductsProvider";
-import MyCart from "./pages/MyCart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./pages/Footer";
-import FavouriteProducts from "./pages/FavouriteProducts";
-import Product from "./pages/Product";
+import { lazy, Suspense } from "react";
+
+const Home = lazy(() => import("./pages/Home"));
+const Products = lazy(() => import("./pages/Products"));
+const MyCart = lazy(() => import("./pages/MyCart"));
+const FavouriteProducts = lazy(() => import("./pages/FavouriteProducts"));
+const Product = lazy(() => import("./pages/Product"));
+const SearchResults = lazy(() => import("./components/Search"));
 
 function App() {
   return (
     <AppProvider>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/cart" element={<MyCart />} />
-          <Route path="*" element={<Home />} />
-          <Route path="/favourite" element={<FavouriteProducts />} />
-          <Route path="/product/:id" element={<Product />} />
-        </Routes>
+        <Suspense fallback={"Loading..."}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<MyCart />} />
+            <Route path="/favourite" element={<FavouriteProducts />} />
+            <Route path="/product/:id" element={<Product />} />
+            <Route path="/search" element={<SearchResults />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
-
       <Footer />
     </AppProvider>
   );

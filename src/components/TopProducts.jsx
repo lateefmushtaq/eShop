@@ -3,9 +3,8 @@ import { ProductContext } from "../context/ProductsProvider";
 import { BiCartAdd } from "react-icons/bi";
 import { FaRegHeart } from "react-icons/fa";
 import { VscHeartFilled } from "react-icons/vsc";
-import "../styles/Featured.css";
 import { handleClick } from "../utils/helper";
-
+import "../styles/Featured.css";
 const productTypes = ["Headphones", "Earbuds", "Earphones", "Neckbands"];
 
 function TopProducts() {
@@ -97,17 +96,17 @@ function TopProducts() {
                   <div onClick={() => handleFavourite(product.id)}>
                     {" "}
                     {favourite.some((item) => item.id === product.id) ? (
-                      <FaRegHeart
-                        style={{
-                          fontSize: "32px",
-                          cursor: "pointer",
-                        }}
-                      />
-                    ) : (
                       <VscHeartFilled
                         style={{
                           fontSize: "32px",
                           color: "red",
+                          cursor: "pointer",
+                        }}
+                      />
+                    ) : (
+                      <FaRegHeart
+                        style={{
+                          fontSize: "32px",
                           cursor: "pointer",
                         }}
                       />

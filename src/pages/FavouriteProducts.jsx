@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import React from "react";
 import Favourite from "../components/Favourite";
 import Navbar from "../components/Navbar";
 import { ProductContext } from "../context/ProductsProvider";

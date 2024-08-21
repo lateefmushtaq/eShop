@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductsProvider";
-import { useContext } from "react";
-import "../styles/Product.css";
 import { handleClick } from "../utils/helper";
 import { MdOutlineDone } from "react-icons/md";
 import ProductOverview from "../pages/ProductOverview";
+import "../styles/Product.css";
 function ProductDetails() {
   const { id } = useParams();
   const { Products, setCartData, setNotify, setMessage, setType } =

@@ -1,7 +1,7 @@
 import { IoIosClose } from "react-icons/io";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
-import React from "react";
+
 import "../styles/Login.css";
 export const Login = ({ isOpen }) => {
   const { setModalOpen } = useContext(ProductContext);

@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo } from "react";
+import React, { useContext, useMemo } from "react";
 import { ProductContext } from "../context/ProductsProvider";
 import { useNavigate } from "react-router-dom";
 function FeaturedProducts() {
