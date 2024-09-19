@@ -80,6 +80,7 @@ function TopProducts() {
                   <h4 style={{ margin: "16px 0px" }}>${product.finalPrice}</h4>
 
                   <BiCartAdd
+                    data-testid={`cart-icon-${product.id}`} // Add this line
                     style={{ fontSize: "32px", cursor: "pointer" }}
                     onClick={() =>
                       handleClick(
@@ -93,7 +94,10 @@ function TopProducts() {
                     }
                   />
 
-                  <div onClick={() => handleFavourite(product.id)}>
+                  <div
+                    onClick={() => handleFavourite(product.id)}
+                    data-testid={`heart-icon-${product.id}`}
+                  >
                     {" "}
                     {favourite.some((item) => item.id === product.id) ? (
                       <VscHeartFilled

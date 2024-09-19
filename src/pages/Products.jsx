@@ -3,10 +3,9 @@ import ProductCard from "../components/ProductCard";
 
 import Toast from "../components/Toast";
 import { ProductContext } from "../context/ProductsProvider";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 export default function Products() {
-  const { Products, setCartData, cartData, setNotify, type, message } =
-    useContext(ProductContext);
+  const { type, message } = useContext(ProductContext);
 
   return (
     <>

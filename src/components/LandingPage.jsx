@@ -2,8 +2,10 @@ import "../styles/LandingPage.css";
 import mainImage from "/images/products/sonyXb910n-1.png";
 import { useNavigate } from "react-router-dom";
 import { FaLongArrowAltRight } from "react-icons/fa";
+
 function LandingPage() {
   const navigate = useNavigate();
+
   return (
     <div className="main">
       <div className="image-info">
@@ -17,7 +19,7 @@ function LandingPage() {
         </button>
       </div>
       <div className="image-container">
-        <img id="image-1" src={mainImage}></img>
+        <img id="image-1" src={mainImage} alt="Sony XB910N"></img>
       </div>
     </div>
   );
