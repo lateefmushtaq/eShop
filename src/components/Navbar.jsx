@@ -17,6 +17,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import { FaCartArrowDown } from "react-icons/fa6";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { ProductContext } from "../context/ProductsProvider";
+import LocalMallRoundedIcon from "@mui/icons-material/LocalMallRounded";
 import { useContext, useState } from "react";
 
 const Search = styled("div")(({ theme }) => ({
@@ -49,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "inherit",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
+
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
     transition: theme.transitions.create("width"),
     width: "100%",
@@ -139,16 +140,11 @@ export default function Navbar() {
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
+        <IconButton size="large" color="inherit">
           <Badge badgeContent={cartData && cartData.length} color="error">
             <FavoriteBorderIcon />
           </Badge>
         </IconButton>
-        <p>Notifications</p>
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
@@ -160,15 +156,23 @@ export default function Navbar() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
       </MenuItem>
     </Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ backgroundColor: "#000000" }}>
+      <AppBar position="static" sx={{ backgroundColor: "#000000" }}>
         <Toolbar>
+          <IconButton
+            size="medium"
+            aria-label="show 4 new mails"
+            sx={{ color: "#fff6f6" }}
+          >
+            <Badge badgeContent={favourite.length} color="error">
+              <LocalMallRoundedIcon />
+            </Badge>
+          </IconButton>
           <Typography
             variant="h6"
             noWrap

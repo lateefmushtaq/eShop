@@ -12,7 +12,6 @@ export default function Favourite() {
     setNotify,
     setMessage,
     setType,
-
     Products,
   } = useContext(ProductContext);
 
