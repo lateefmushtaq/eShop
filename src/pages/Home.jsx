@@ -3,6 +3,8 @@ import LandingPage from "../components/LandingPage";
 import Navbar from "../components/Navbar";
 import FeaturedProducts from "../components/FeaturedProducts";
 import Toast from "../components/Toast";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid2";
 
 function Home() {
   return (
@@ -11,7 +13,16 @@ function Home() {
       <Toast />
       <LandingPage />
       <FeaturedProducts />
-      <TopProducts />
+
+      <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
+        <Grid
+          container
+          spacing={4}
+          sx={{ justifyContent: "center", marginTop: "12px" }}
+        >
+          <TopProducts />
+        </Grid>
+      </Box>
     </div>
   );
 }

@@ -169,7 +169,7 @@ export default function Navbar() {
             aria-label="show 4 new mails"
             sx={{ color: "#fff6f6" }}
           >
-            <Badge badgeContent={favourite.length} color="error">
+            <Badge color="error">
               <LocalMallRoundedIcon />
             </Badge>
           </IconButton>

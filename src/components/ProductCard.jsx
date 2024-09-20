@@ -17,8 +17,9 @@ import { FaStar } from "react-icons/fa";
 import { handleClick } from "../utils/helper";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function ProductCard({ filteredProducts }) {
+  const navigate = useNavigate();
   const { Products, setCartData, setNotify, setMessage, setType } =
     useContext(ProductContext);
 
@@ -45,6 +46,7 @@ export default function ProductCard({ filteredProducts }) {
           >
             <CardActionArea>
               <CardMedia
+                onClick={() => navigate(`/product/${product.id}`)}
                 component="img"
                 height="200"
                 image={product.images[0]}
@@ -61,7 +63,7 @@ export default function ProductCard({ filteredProducts }) {
                   Ratings: {product.ratings}
                 </Typography>{" "}
               </CardActions>
-              <CardContent>
+              <CardContent onClick={() => navigate(`/product/${product.id}`)}>
                 <Box sx={{ p: 1 }}>
                   <Stack
                     direction="row"

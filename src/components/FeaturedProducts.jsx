@@ -24,12 +24,7 @@ function FeaturedProducts() {
           featured.map((product) => (
             <div className="top-products" key={product.id}>
               <p id="title">{product.title}</p>
-              <img
-                src={product.images[0]}
-                alt=""
-                className="top-image"
-                onClick={() => navigate(`/product/${product.id}`)}
-              />
+
               <p id="price-id">
                 ${product.finalPrice} <span>{product.originalPrice}</span>
               </p>

@@ -1,13 +1,31 @@
 import React, { useState, useContext, useMemo } from "react";
-import { ProductContext } from "../context/ProductsProvider";
-import { BiCartAdd } from "react-icons/bi";
-import { FaRegHeart } from "react-icons/fa";
-import { VscHeartFilled } from "react-icons/vsc";
+import {
+  Box,
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  Stack,
+  Chip,
+  Divider,
+  Button,
+  CardActionArea,
+  CardActions,
+} from "@mui/material";
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import { FaStar } from "react-icons/fa";
 import { handleClick } from "../utils/helper";
-import "../styles/Featured.css";
-const productTypes = ["Headphones", "Earbuds", "Earphones", "Neckbands"];
+import { ProductContext } from "../context/ProductsProvider";
+import { useNavigate } from "react-router-dom";
+import { VscHeartFilled } from "react-icons/vsc";
+import { FaRegHeart } from "react-icons/fa";
+const lastCard = { id: 3099, title: "View All" };
 
-function TopProducts() {
+export default function ProductCard() {
+  const [activeProduct, setActiveProduct] = useState("Headphones");
+  const [showFeatured, setShowFeatured] = useState([]);
+  const navigate = useNavigate();
   const {
     Products,
     setCartData,
@@ -18,15 +36,16 @@ function TopProducts() {
     favourite,
   } = useContext(ProductContext);
 
-  const [activeProduct, setActiveProduct] = useState("Headphones");
-  const [showFeatured, setShowFeatured] = useState([]);
-
   useMemo(() => {
     const filteredProducts = Products.filter(
       (product) => product.category === activeProduct
     );
     setShowFeatured(filteredProducts);
   }, [Products, activeProduct]);
+
+  function handleTopProducts(productType) {
+    setActiveProduct(productType);
+  }
 
   function handleFavourite(id) {
     const isAlreadyFav = favourite.some((item) => item.id === id);
@@ -41,64 +60,99 @@ function TopProducts() {
     }
   }
 
-  function handleTopProducts(productType) {
-    setActiveProduct(productType);
-  }
-
   return (
     <>
-      <h4 id="heading">Top Products</h4>
-      <div className="featured">
-        <div className="tab">
-          <ul>
-            {productTypes.map((productType) => (
-              <li
-                className={`product-item ${
-                  activeProduct === productType ? "active" : ""
-                }`}
-                key={productType}
-                onClick={() => handleTopProducts(productType)}
-              >
-                {productType}
-              </li>
-            ))}
-          </ul>
-        </div>
+      {showFeatured.map((product) => {
+        return (
+          <Card
+            sx={{
+              width: 275,
+              borderRadius: 0,
+              backgroundColor: "#1B1B1B",
+              color: "#f1f1f1",
+              boxShadow: 2,
+              transition: "0.3s",
+              "&:hover": {
+                boxShadow: "none",
+                backgroundColor: "#1B1B1B",
+                boxShadow: 12,
+              },
+            }}
+            key={product.id}
+          >
+            <CardActionArea>
+              <CardMedia
+                onClick={() => navigate(`/product/${product.id}`)}
+                component="img"
+                height="200"
+                image={product.images[0]}
+                alt="product image 01"
+                sx={{ objectFit: "contain", backgroundColor: "#f1f1f1" }}
+              />
 
-        <div className="top-products-container">
-          {showFeatured.map((product) => (
-            <div key={product.id} className="top-card">
-              <div className="card-image">
-                <img src={product.images[0]} alt={product.title} />
-              </div>
-              <div className="card-details">
-                <span>Ratings: {product.ratings}</span>
-                <div className="rating"></div>
-                <h4 style={{ margin: "16px 0px" }}>{product.title}</h4>
-                <hr id="divider" />
-                <div className="cartBtn">
-                  <h4 style={{ margin: "16px 0px" }}>${product.finalPrice}</h4>
+              <CardContent onClick={() => navigate(`/product/${product.id}`)}>
+                <Box>
+                  <Stack
+                    direction="row"
+                    sx={{
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Typography
+                      gutterBottom
+                      variant="h6"
+                      component="div"
+                      sx={{ fontWeight: "bold" }}
+                    >
+                      {product.title}
+                    </Typography>
+                    <Stack sx={{ display: "flex", flexDirection: "row" }}>
+                      {" "}
+                      <AttachMoneyIcon fontSize="small" />
+                      <Typography
+                        variant="body2"
+                        sx={{ color: "#f1f1f1", fontWeight: "bold", ml: 0 }}
+                      >
+                        {product.finalPrice}
+                      </Typography>
+                    </Stack>
+                  </Stack>
+                  <Divider sx={{ backgroundColor: "#f1f1f135" }} />
+                  <Box
+                    sx={{
+                      color: "#f1f1f1",
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                  ></Box>
+                </Box>
+              </CardContent>
+              <CardContent sx={{ p: 0 }}>
+                <CardActions
+                  sx={{ p: 1, pt: 0, justifyContent: "space-evenly" }}
+                >
+                  <Stack>
+                    <ShoppingCartCheckoutIcon
+                      style={{ fontSize: "24px" }}
+                      onClick={() =>
+                        handleClick(
+                          product.id,
+                          setCartData,
+                          setNotify,
+                          setMessage,
+                          setType,
+                          Products
+                        )
+                      }
+                    />
+                  </Stack>
 
-                  <BiCartAdd
-                    style={{ fontSize: "32px", cursor: "pointer" }}
-                    onClick={() =>
-                      handleClick(
-                        product.id,
-                        setCartData,
-                        setNotify,
-                        setMessage,
-                        setType,
-                        Products
-                      )
-                    }
-                  />
-
-                  <div onClick={() => handleFavourite(product.id)}>
-                    {" "}
+                  <Stack onClick={() => handleFavourite(product.id)}>
                     {favourite.some((item) => item.id === product.id) ? (
                       <VscHeartFilled
                         style={{
-                          fontSize: "32px",
+                          fontSize: "24px",
                           color: "red",
                           cursor: "pointer",
                         }}
@@ -106,20 +160,28 @@ function TopProducts() {
                     ) : (
                       <FaRegHeart
                         style={{
-                          fontSize: "32px",
+                          fontSize: "24px",
                           cursor: "pointer",
                         }}
                       />
                     )}
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+                  </Stack>
+                  <Typography
+                    variant="p"
+                    sx={{
+                      fontStyle: "italic",
+                      fontWeight: "bold",
+                      opacity: 0.5,
+                    }}
+                  >
+                    Rating: {product.ratings}
+                  </Typography>
+                </CardActions>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        );
+      })}
     </>
   );
 }
-
-export default TopProducts;
