@@ -1,30 +1,34 @@
-# React + TypeScript + Vite
+# E-Shop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An e-commerce web application built with **React** and hosted on **Vercel**. This platform allows users to browse, search for products, and make purchases easily through a modern and responsive interface.
 
-Currently, two official plugins are available:
+[Live Demo](https://e-shop-pi-henna.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Product Browsing**: Explore a wide variety of products with categories.
+- **Search Functionality**: Quickly search for products using the search bar.
+- **Responsive Design**: Fully responsive layout, optimized for both mobile and desktop.
+- **User Interface**: A modern, intuitive UI built using Material-UI (or other styling libraries used).
+- **Fast and Secure**: Hosted on Vercel with optimal performance and security.
+  
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Frontend library for building the user interface.
+- **Vercel**: Hosting for the live deployment of the application.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation and Setup Instructions
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+### Prerequisites:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Node.js and npm installed on your system.
+- Git installed on your machine.
+
+### Setup
+
+
+
+   ```bash
+   git clone https://github.com/yourusername/e-shop.git
+   npm install
+   npm run dev
