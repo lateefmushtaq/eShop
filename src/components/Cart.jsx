@@ -4,9 +4,55 @@ import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 
+const myStyle = {
+  textDecoration: "line-through",
+  color: "#f8f8f847",
+  marginLeft: "8px",
+};
+
+function CartItem({ item, handleDelete }) {
+  return (
+    <div className="cart-container">
+      <div className="cart">
+        <div className="quantity">
+          <p>{item.quantity}</p>
+          <LiaTimesSolid size={"12px"} />
+        </div>
+        <div className="item-img">
+          <img
+            src={item.images?.[0] || "default-image-url"}
+            alt={item.title || "Product image"}
+            className="card-img"
+          />
+        </div>
+        <div className="item-info">
+          <span>
+            <p>{item.title}</p>
+            <span>{item.info}</span>
+          </span>
+          <span>
+            <p>
+              ${item.finalPrice}
+              <span style={myStyle}>{item.originalPrice}</span>
+            </p>
+          </span>
+        </div>
+        <div className="item-info-del">
+          <MdOutlineDeleteOutline
+            className="delete-icon"
+            onClick={() => handleDelete(item.id)}
+            aria-label="Delete item"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Cart() {
   const { setCartData, cartData, setNotify, setMessage, setType } =
     useContext(ProductContext);
+
   function handleDelete(id) {
     const updatedData = cartData.filter((e) => e.id !== id);
     setCartData(updatedData);
@@ -14,52 +60,20 @@ export default function Cart() {
     setMessage("Item Removed From Cart");
     setType("error");
   }
+
+  if (!cartData) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
-      {cartData.length !== 0 &&
+      {cartData.length !== 0 ? (
         cartData.map((item) => (
-          <div className="cart-container" key={item.id}>
-            <div className="cart">
-              <div className="quantity">
-                <p> {item.quantity}</p>
-                <LiaTimesSolid size={"12px"} />
-              </div>
-              <div className="item-img">
-                <img
-                  src={item.images[0]}
-                  alt={item.title}
-                  className="card-img"
-                />
-              </div>
-              <div className="item-info">
-                <span>
-                  <p>{item.title}</p>
-                  <span> {item.info}</span>
-                </span>
-                <span>
-                  <p>
-                    ${item.finalPrice}{" "}
-                    <span
-                      style={{
-                        textDecoration: "line-through",
-                        color: "#f8f8f847",
-                        marginLeft: "8px",
-                      }}
-                    >
-                      {item.originalPrice}
-                    </span>
-                  </p>
-                </span>
-              </div>
-              <div className="item-info-del">
-                <MdOutlineDeleteOutline
-                  className="delete-icon"
-                  onClick={() => handleDelete(item.id)}
-                />
-              </div>
-            </div>
-          </div>
-        ))}
+          <CartItem key={item.id} item={item} handleDelete={handleDelete} />
+        ))
+      ) : (
+        <div>No Items</div>
+      )}
     </div>
   );
 }
