@@ -2,15 +2,15 @@ import React, { useContext } from "react";
 import { ProductContext } from "../context/ProductsProvider";
 import "../styles/Checkout.css";
 function Checkout() {
-  const { cartData } = useContext(ProductContext);
+  const { cartData =[] } = useContext(ProductContext);
 
   const price = cartData.reduce(
-    (acc, item) => (acc + item.originalPrice) * item.quantity,
+    (acc, item) =>acc + item.originalPrice * item.quantity,
     0
   );
 
   const total = cartData.reduce(
-    (acc, item) => (acc + item.finalPrice) * item.quantity,
+    (acc, item) => acc + item.finalPrice * item.quantity,
     0
   );
   const discount = price - total;
@@ -22,7 +22,7 @@ function Checkout() {
         </div>
         <div className="detail-Price">
           <span>
-            <p> Price</p>{" "}
+            <p> Price</p>
           </span>{" "}
           <span>
             <p>{price}</p>
@@ -38,7 +38,7 @@ function Checkout() {
         </div>
         <div className="detail-Price">
           <span>
-            <p>Delivery</p>{" "}
+            <p>Delivery</p>
           </span>
           <span style={{ color: "green" }}>
             <p>Free</p>
