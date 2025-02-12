@@ -5,7 +5,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      external: ["@mui/material/Box"], // Add other MUI components if needed
+      external: [
+        "@mui/material/Box",
+        "@mui/material/Grid",
+        "@mui/icons-material", // Add if you're using icons
+      ],
     },
   },
 });
