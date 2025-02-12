@@ -11,7 +11,8 @@ import {
   CardActionArea,
   CardActions,
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
+
+import Add from "@mui/icons-material/Add";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { FaStar } from "react-icons/fa";
 import { handleClick } from "../utils/helper";
@@ -37,7 +38,6 @@ export default function ProductCard({ filteredProducts }) {
               boxShadow: 2,
               transition: "0.3s",
               "&:hover": {
-                boxShadow: "none",
                 backgroundColor: "#1B1B1B",
                 boxShadow: 12,
               },
@@ -156,7 +156,7 @@ export default function ProductCard({ filteredProducts }) {
                     )
                   }
                   fullWidth
-                  startIcon={<AddIcon />}
+                  startIcon={<Add />}
                 >
                   Add to cart
                 </Button>

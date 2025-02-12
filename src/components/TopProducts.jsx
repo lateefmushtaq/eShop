@@ -6,22 +6,17 @@ import {
   CardContent,
   Typography,
   Stack,
-  Chip,
   Divider,
-  Button,
   CardActionArea,
   CardActions,
 } from "@mui/material";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import { FaStar } from "react-icons/fa";
 import { handleClick } from "../utils/helper";
 import { ProductContext } from "../context/ProductsProvider";
 import { useNavigate } from "react-router-dom";
 import { VscHeartFilled } from "react-icons/vsc";
 import { FaRegHeart } from "react-icons/fa";
-const lastCard = { id: 3099, title: "View All" };
-
 export default function ProductCard() {
   const [activeProduct, setActiveProduct] = useState("Headphones");
   const [showFeatured, setShowFeatured] = useState([]);
@@ -70,10 +65,9 @@ export default function ProductCard() {
               borderRadius: 0,
               backgroundColor: "#1B1B1B",
               color: "#f1f1f1",
-              boxShadow: 2,
               transition: "0.3s",
+              boxShadow: 2,
               "&:hover": {
-                boxShadow: "none",
                 backgroundColor: "#1B1B1B",
                 boxShadow: 12,
               },

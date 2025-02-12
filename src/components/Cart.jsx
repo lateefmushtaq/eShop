@@ -3,7 +3,6 @@ import { MdOutlineDeleteOutline } from "react-icons/md";
 import { ProductContext } from "../context/ProductsProvider";
 import { useContext } from "react";
 import { LiaTimesSolid } from "react-icons/lia";
-
 export default function Cart() {
   const { setCartData, cartData, setNotify, setMessage, setType } =
     useContext(ProductContext);

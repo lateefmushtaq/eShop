@@ -3,14 +3,16 @@ import { Box, Grid, Stack, Typography, Avatar, Button } from "@mui/material";
 import mainImage from "/images/products/sonyXb910n-1.png";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import { useNavigate } from "react-router-dom";
 export default function LandingPage() {
+  const navigate = useNavigate();
   const [hover, setHover] = React.useState(false);
   return (
     <Box
       sx={{
         flexGrow: 1,
-        backgroundColor: "#1a1a1a", // Dark background to match the design
-        padding: 4, // Padding around the content
+        backgroundColor: "#1a1a1a",
+        padding: 4,
       }}
     >
       <Grid
@@ -19,7 +21,6 @@ export default function LandingPage() {
         alignItems="center"
         sx={{ margin: 0, width: "100%" }}
       >
-        {/* Left side (Text content) */}
         <Grid item xs={12} md={6} sx={{ padding: 0 }}>
           <Box
             sx={{
@@ -27,7 +28,7 @@ export default function LandingPage() {
               justifyContent: "center",
               alignItems: "center",
               height: "100%",
-              padding: 0, // Remove any padding inside the box
+              padding: 0,
             }}
           >
             <Stack spacing={2} sx={{ color: "#fff" }}>
@@ -62,7 +63,8 @@ export default function LandingPage() {
                   padding: "10px 20px",
                   fontSize: "16px",
                 }}
-                onMouseEnter={() => setHover(true)} // Set hover state to true
+                onClick={() => navigate("/products")}
+                onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
               >
                 Shop Now {hover ? <TrendingFlatIcon /> : <ArrowForwardIcon />}
@@ -79,7 +81,7 @@ export default function LandingPage() {
               justifyContent: "center",
               alignItems: "center",
               height: "100%",
-              padding: 0, // Remove any padding
+              padding: 0,
             }}
           >
             <Avatar
@@ -89,11 +91,10 @@ export default function LandingPage() {
                 width: "100%",
                 height: "auto",
                 maxWidth: 400,
-                transformStyle: "preserve-3d", // Enable 3D space for the flip effect
-                transition: "transform 0.2s",
+                transformStyle: "preserve-3d",
                 "&:hover": {
-                  transform: "rotate(360deg)", // Apply the rotation
-                  transform: "rotateY(180deg)", // Smooth transition effect
+                  transform: "rotate(360deg)",
+                  transform: "rotateY(180deg)",
                 },
               }}
             />

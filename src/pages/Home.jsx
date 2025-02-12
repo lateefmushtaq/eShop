@@ -1,10 +1,10 @@
 import TopProducts from "../components/TopProducts";
 import LandingPage from "../components/LandingPage";
 import Navbar from "../components/Navbar";
-import FeaturedProducts from "../components/FeaturedProducts";
 import Toast from "../components/Toast";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
+import Headings from "../components/Headings";
 
 function Home() {
   return (
@@ -12,8 +12,8 @@ function Home() {
       <Navbar />
       <Toast />
       <LandingPage />
-      <FeaturedProducts />
 
+      <Headings value={"Top Products"} />
       <Box sx={{ flexGrow: 1, justifyContent: "center" }}>
         <Grid
           container

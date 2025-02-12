@@ -1,0 +1,1 @@
+function f(u,i,t,d,c,o){const e=o.find(s=>s.id===u);e&&(i(s=>s&&s.some(n=>n.id===u)?s.map(n=>n.id===u?{...n,quantity:(n.quantity||1)+1}:n):[...s,{...e,quantity:1}]),t(!0),d("Added successfully"),c("success"))}export{f as h};

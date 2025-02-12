@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid2";
 import Toast from "../components/Toast";
 import { ProductContext } from "../context/ProductsProvider";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 export default function Products() {
   const { type, message } = useContext(ProductContext);
   return (
